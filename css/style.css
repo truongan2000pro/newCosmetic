@@ -47,13 +47,23 @@ li {
   width: 1;
 } */
 .content-wrapper {
+  overflow: scroll;
   padding-top: 120px;
 
   /* bottom: 200px; */
   height: calc(85vh - 100px);
-  /* width: 1200px; */
+  /* width: 1400px; */
+  margin: auto;
   /* background-color: grey; */
-  padding-left: 100px;
+  /* padding-left: 100px; */
+}
+
+.content-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.content-container {
+  width: 1400px;
+  margin: auto;
 }
 .content-img {
   width: 250px;
@@ -73,4 +83,8 @@ li {
   border-bottom: 1px solid black;
   margin: auto;
   margin-top: 5px;
+}
+
+.li-content-details {
+  margin: 20px 30px 60px 30px;
 }
