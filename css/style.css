@@ -101,6 +101,8 @@ li {
 .product-details > * {
   margin-top: 5px;
   text-align: center;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .product-bot-border {
