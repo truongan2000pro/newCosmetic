@@ -1,3 +1,4 @@
+/* animation */
 .content-wrapper {
   animation: transistionIn 2s;
 }
@@ -90,6 +91,7 @@ li {
 .content-img {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
 }
 .product-details {
   margin-top: 16px;
@@ -107,25 +109,86 @@ li {
   margin: auto;
   margin-top: 5px;
 }
+.product-image {
+  position: relative;
+  overflow: hidden;
+  /* this will hide the overflow that will be happening in translate(100%,100%)*/
+}
 .add-to-cart {
-  display: inline-block;
+  /* display: none;
   color: white;
-  margin-left: 26%;
-  /* border: 1px solid #ccc; */
-  background: red;
+  margin-left: 26%; */
+  /* color: transparent; */
+  /* background-color: red;
   cursor: pointer;
   vertical-align: middle;
   min-width: 110px;
-  max-width: 120px;
   border-radius: 5px;
-
   padding: 5px;
+   */
+  /* border: 1px solid #ccc;
+  background-color: red;
+  text-align: center; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
+  opacity: 0;
+  transition: opacity 0.75s;
+  backdrop-filter: blur(4px);
+  transform: translateY(20px);
+  transition: transform 0.25s;
+  /* transition: all 1s ease-in-out;
+  transform: translate(100%, 100%);
+  background-color: red;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0;
+  font-size: 12px; */
+  /* this will put the element away from the cart */
+}
+.add-to-cart:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+.add-btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  background: #ffab00;
+  width: 200px;
+  height: 35px;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 2px;
+  border-radius: 24px;
+  text-decoration: none;
   text-align: center;
 }
+.add-btn:hover {
+  cursor: pointer;
+}
 
+/* .product-image:hover .add-to-cart { */
+/* transform: translate(0, 0); */
+/* display: block; */
+/* when hover, now the element is shown in their original position */
+/* } */
 .li-content-details {
   margin: 20px 30px 60px 30px;
 }
+
 /* footer */
 .footer-wrapper {
   height: 200px;
