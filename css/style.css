@@ -1,5 +1,5 @@
 .content-wrapper {
-  animation: transistionIn 2.5s;
+  animation: transistionIn 2s;
 }
 @keyframes transistionIn {
   from {
@@ -11,6 +11,7 @@
     transform: rotateX(0);
   }
 }
+/* body */
 body {
   background-color: #dce1e3;
   font-family: "Vollkorn", serif;
@@ -23,6 +24,7 @@ body {
   background-color: #ffffff;
   /* overflow: scroll; */
 }
+/* nav-bar */
 .nav-bar-wrapper {
   width: 100%;
   background-color: #f5f5f5;
@@ -37,6 +39,7 @@ body {
   color: #796a6a;
   cursor: pointer;
 }
+/* content */
 .logo-image {
   float: left;
   width: 46px;
@@ -107,7 +110,62 @@ li {
 .li-content-details {
   margin: 20px 30px 60px 30px;
 }
+/* footer */
 .footer-wrapper {
   height: 200px;
-  background-color: red;
+  background-color: black;
+}
+.footer-container {
+  width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  /* flex: auto; */
+}
+.contact-details {
+  padding-top: 20px;
+}
+.left-footer {
+  display: inline-block;
+}
+.center-footer {
+  display: inline-block;
+}
+.right-footer {
+  display: inline-block;
+}
+.shipping-store-payment {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.shipping-store-payment:hover {
+  color: #796a6a;
+  cursor: pointer;
+}
+.contact-number-info {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.contact-number-info:hover {
+  color: #796a6a;
+  cursor: pointer;
+}
+.fb-ig-pt {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.fb-ig-pt:hover {
+  color: #796a6a;
+  cursor: pointer;
+}
+/* signature bar */
+.signature-bar {
+  height: 40px;
+  background: gray;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
 }
