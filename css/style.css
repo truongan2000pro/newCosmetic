@@ -1,5 +1,5 @@
 .content-wrapper {
-  animation: transistionIn 0.75s;
+  animation: transistionIn 2.5s;
 }
 @keyframes transistionIn {
   from {
@@ -18,9 +18,10 @@ body {
 }
 .body-wrapper {
   /* width: 1200px; */
-  height: 100vh;
+  height: 100%;
   margin: auto;
   background-color: #ffffff;
+  /* overflow: scroll; */
 }
 .nav-bar-wrapper {
   width: 100%;
@@ -64,11 +65,12 @@ li {
   width: 1;
 } */
 .content-wrapper {
-  overflow: scroll;
+  overflow: auto;
   padding-top: 120px;
+  width: 1400px;
 
   /* bottom: 200px; */
-  height: calc(85vh - 100px);
+  height: 100%;
   /* width: 1400px; */
   margin: auto;
   /* background-color: grey; */
@@ -78,10 +80,10 @@ li {
 .content-wrapper::-webkit-scrollbar {
   display: none;
 }
-.content-container {
+/* .content-container {
   width: 1400px;
   margin: auto;
-}
+} */
 .content-img {
   width: 250px;
   height: 250px;
@@ -104,4 +106,8 @@ li {
 
 .li-content-details {
   margin: 20px 30px 60px 30px;
+}
+.footer-wrapper {
+  height: 200px;
+  background-color: red;
 }
