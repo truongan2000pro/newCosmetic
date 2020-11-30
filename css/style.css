@@ -30,6 +30,7 @@ body {
   width: 100%;
   background-color: #f5f5f5;
   position: fixed;
+  z-index: 1000;
 }
 .nav-bar-container {
   width: 400px;
@@ -104,6 +105,10 @@ li {
   font-weight: 500;
   font-size: 18px;
 }
+.product-details > *:hover {
+  cursor: pointer;
+  color: #796a6a;
+}
 
 .product-bot-border {
   width: 29px;
@@ -136,7 +141,7 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   color: red;
   display: flex;
@@ -149,7 +154,7 @@ li {
   transition: opacity 0.75s;
   backdrop-filter: blur(4px);
   transform: translateY(20px);
-  transition: transform 0.25s;
+  transition: transform 0.5s;
   /* transition: all 1s ease-in-out;
   transform: translate(100%, 100%);
   background-color: red;
