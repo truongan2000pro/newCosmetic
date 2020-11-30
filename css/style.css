@@ -2,6 +2,9 @@
 .content-wrapper {
   animation: transistionIn 2s;
 }
+.landing-page-wrapper {
+  animation: transistionIn 2s;
+}
 @keyframes transistionIn {
   from {
     opacity: 0;
@@ -12,6 +15,7 @@
     transform: rotateX(0);
   }
 }
+
 /* body */
 body {
   background-color: #dce1e3;
@@ -33,13 +37,64 @@ body {
   z-index: 1000;
 }
 .nav-bar-container {
-  width: 400px;
+  width: 500px;
   height: 80px;
   margin: auto;
 }
 .nav-bar-container > ol > li:hover {
   color: #796a6a;
   cursor: pointer;
+}
+
+/* landingpage */
+.landing-page-wrapper {
+  height: 100vh;
+  background-color: red;
+  position: relative;
+}
+.landing-page-wrapper > img {
+  width: 100%;
+  height: 100vh;
+}
+.explore-now {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  /* color: white; */
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 3em;
+}
+.explore-now > * {
+  /* width: 420px;
+  height: 80px;
+  color: white;
+  background: #ffc83c;
+  border-radius: 24px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 1px; */
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  background: #ffc83c;
+  width: 420px;
+  height: 80px;
+  font-size: 40px;
+  line-height: 75px;
+  letter-spacing: 2px;
+  border-radius: 100px;
+  text-decoration: none;
+  text-align: center;
 }
 /* content */
 .logo-image {
@@ -64,7 +119,7 @@ ol {
 li {
   float: left;
   margin: 20px;
-  font-size: 16px;
+  font-size: 21px;
 }
 /* .landing-page-wrapper {
   width: 1;
@@ -173,7 +228,7 @@ li {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: rgb(255, 255, 255);
   border-radius: 10px;
-  background: #ffab00;
+  background: #ffc83c;
   width: 200px;
   height: 35px;
   font-size: 18px;
@@ -194,6 +249,13 @@ li {
 /* } */
 .li-content-details {
   margin: 20px 30px 60px 30px;
+}
+.content-details {
+  border-radius: 10px;
+}
+.content-details:hover {
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1), 1px 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
 }
 
 /* footer */
