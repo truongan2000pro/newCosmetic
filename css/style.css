@@ -59,12 +59,14 @@ body {
   background-color: #dce1e3;
   font-family: "Vollkorn", serif;
   margin: auto;
+  scroll-snap-type: y mandatory;
 }
 .body-wrapper {
   /* width: 1200px; */
   height: 100%;
   margin: auto;
   background-color: #ffffff;
+  /* scroll-snap-align: end; */
   /* overflow: scroll; */
 }
 /* nav-bar */
@@ -93,7 +95,7 @@ body {
 }
 .landing-page-wrapper > img {
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(1000px - 100px);
 }
 
 .explore-now {
@@ -113,6 +115,7 @@ body {
   font-size: 3em;
 }
 .explore-now-text {
+  color: white !important;
   background-color: #d7d7d7;
   box-shadow: 3px 5px 5px #888888;
   border-radius: 2px;
@@ -130,6 +133,7 @@ body {
   background-color: #000;
   /*  Making button bigger on hover  */
   transform: scale(1.2) perspective(1px);
+  cursor: pointer;
 }
 .explore-now > * {
   /* width: 420px;
