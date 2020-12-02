@@ -88,14 +88,14 @@ body {
 
 /* landingpage */
 .landing-page-wrapper {
-  height: (100vh - 100px);
+  height: 90%;
   padding-top: 100px;
   background-color: white;
   position: relative;
 }
 .landing-page-wrapper > img {
   width: 100%;
-  height: calc(1000px - 100px);
+  height: 90%;
 }
 
 .explore-now {

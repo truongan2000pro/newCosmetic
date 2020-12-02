@@ -3,13 +3,15 @@ function init() {
   onePageScroll();
 }
 function onePageScroll() {
-  window.addEventListener("wheel", (e) => {
+  let content = document.getElementById("content-wrapper");
+  window.onmousewheel = (e) => {
+    // console.log(e, window.pageYOffset);
     if (e.pageY <= 1120 && e.deltaY > 99) {
-      window.scroll(0, 900);
+      window.scrollTo({ top: content.offsetTop - 100 });
     }
-    if (e.pageY <= 1250 && e.deltaY < -99) {
+    if (e.pageY <= content.offsetTop && e.deltaY < -99) {
       console.log(e.pageY);
-      window.scroll(0, 0);
+      window.scrollTo({ top: 0 });
     }
-  });
+  };
 }
