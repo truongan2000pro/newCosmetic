@@ -54,6 +54,28 @@ a:focus {
 a:active {
   text-decoration: none;
 }
+.to-top {
+  color: white;
+  padding: 15px 18px;
+  margin: auto;
+}
+
+#mybutton {
+  background-color: #ffc83c;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  border-radius: 10px;
+}
+#mybutton:hover {
+  cursor: pointer;
+}
+.fa-arrow-up {
+  font-size: 29px;
+  text-align: center;
+}
 /* body */
 body {
   background-color: #dce1e3;
@@ -323,6 +345,7 @@ li {
   background-color: black;
 }
 .footer-container {
+  padding-top: 35px;
   width: 900px;
   margin: auto;
   display: flex;
@@ -342,6 +365,8 @@ li {
   display: inline-block;
 }
 .shipping-store-payment {
+  font-family: "Raleway", sans-serif;
+
   color: white;
   font-size: 18px;
   margin-top: 20px;
@@ -351,6 +376,8 @@ li {
   cursor: pointer;
 }
 .contact-number-info {
+  font-family: "Raleway", sans-serif;
+
   color: white;
   font-size: 18px;
   margin-top: 20px;
@@ -360,6 +387,8 @@ li {
   cursor: pointer;
 }
 .fb-ig-pt {
+  font-family: "Raleway", sans-serif;
+
   color: white;
   font-size: 18px;
   margin-top: 20px;
@@ -369,11 +398,39 @@ li {
   cursor: pointer;
 }
 .media-text {
+  font-family: "Raleway", sans-serif;
+  border-bottom: 1px solid white;
+  width: 200px;
   color: white;
-  font-size: 21px;
+  font-size: 22px;
   display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 29px;
+}
+.media-container {
+  padding-top: 29px;
   height: 200px;
   background-color: black;
+}
+.facebook {
+  /* background-color: #483e3b; */
+  margin: auto;
+  width: 200px;
+}
+.fb-ig {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  padding: 20px;
+}
+.fa-facebook:hover {
+  color: #1385fe;
+  cursor: pointer;
+}
+.fa-instagram:hover {
+  color: #ff52da;
+  cursor: pointer;
 }
 /* signature bar */
 .signature-bar {
