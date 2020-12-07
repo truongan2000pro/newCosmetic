@@ -34,6 +34,7 @@
     transform: translateY(0);
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -76,6 +77,22 @@ a:active {
   font-size: 29px;
   text-align: center;
 }
+/* slick jquery css */
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+  font-size: 29px;
+}
+.slick-next {
+  margin-right: 35px;
+}
+.slick-prev {
+  margin-left: 35px;
+}
+.slick-slide {
+  outline: none;
+}
+
 /* body */
 body {
   background-color: #dce1e3;
@@ -99,7 +116,7 @@ body {
   z-index: 1000;
 }
 .nav-bar-container {
-  width: 500px;
+  width: 600px;
   height: 80px;
   margin: auto;
 }
@@ -351,6 +368,10 @@ li {
   display: flex;
   justify-content: space-between;
   /* flex: auto; */
+}
+.footer-title {
+  font-weight: 900;
+  font-style: italic;
 }
 .contact-details {
   padding-top: 20px;
