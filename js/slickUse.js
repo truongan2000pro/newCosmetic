@@ -26,5 +26,6 @@ $(document).ready(function () {
     cssEase: "linear",
     variableWidth: true,
     variableHeight: true,
+    arrows: true,
   });
 });

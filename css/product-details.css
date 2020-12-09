@@ -83,6 +83,9 @@ a:active {
   color: black !important;
   font-size: 29px;
 }
+.slick-prev {
+  left: -35px;
+}
 .slick-slide {
   outline: none;
 }
