@@ -165,7 +165,7 @@ li {
   width: 1300px;
   height: 100px;
   margin: auto;
-  /* display: flex; */
+  display: flex;
 }
 .nav-bar-container > ol > li > a:hover {
   color: #796a6a;
