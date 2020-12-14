@@ -1,7 +1,3 @@
-body {
-  background: white;
-}
-
 /* animation */
 .content-wrapper {
   animation: transistionIn 2s;
@@ -41,7 +37,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-  background: white;
 }
 a {
   color: inherit;
@@ -88,9 +83,6 @@ a:active {
   color: black !important;
   font-size: 29px;
 }
-.slick-prev {
-  left: -35px;
-}
 .slick-slide {
   outline: none;
 }
@@ -116,10 +108,10 @@ body {
 /* nav-bar */
 .logo-image {
   float: left;
-  width: 120px;
-  height: 100px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  /* margin-left: 80px;  */
+  margin-left: 80px;
   /* overflow: hidden; */
   /* margin-top: -6px; */
 }
@@ -131,16 +123,12 @@ ol {
   list-style-type: none;
   /* float: left; */
   margin: 5px;
-  /* margin-top: 20px; */
+  margin-top: 20px;
 }
 li {
   float: left;
   margin: 20px;
   font-size: 21px;
-}
-.navbar-brand {
-  width: 120px;
-  height: 100px;
 }
 .nav-bar-wrapper {
   width: 100%;
@@ -149,36 +137,13 @@ li {
   z-index: 1000;
 }
 .nav-bar-container {
-  width: 1300px;
-  height: 100px;
+  width: 600px;
+  height: 80px;
   margin: auto;
-  display: flex;
 }
 .nav-bar-container > ol > li > a:hover {
   color: #796a6a;
   cursor: pointer;
-}
-
-.nav-button-container {
-  float: right;
-}
-
-.ol-li-container {
-  width: 610px;
-  /* display: flex; */
-  margin: auto;
-  height: 100%;
-}
-.ol-li-container > ol {
-  /* padding: 0px !important; */
-  /* width: 1000px; */
-  /* justify-content: center;
-  align-self: center; */
-  /* margin-bottom: 0px !important; */
-  /* line-height: 1.2; */
-}
-.li-content-container > li {
-  padding-top: 15px;
 }
 
 /* products detail page */
@@ -202,7 +167,7 @@ li {
 
 .product-detail-wrapper {
   height: 100%;
-  width: 1400px;
+  width: 90%;
   margin: auto;
   background-color: white;
 }
@@ -289,7 +254,7 @@ li {
 }
 .suggestion-wrapper {
   padding-top: 50px;
-  width: 90%;
+  width: 60%;
   height: 500px;
   /* margin-left: 40px; */
   margin: auto;
@@ -299,21 +264,14 @@ li {
   font-size: 29px;
   font-weight: 600;
   border-bottom: 8px solid #ffc83c;
-  width: 40%;
+  width: 30%;
   text-align: center;
 }
 .suggestion-ol-content {
   float: left;
   padding: 0px !important;
-  width: 980px;
-  margin: auto;
 }
 .suggestion-li-content {
-}
-.suggestion-content {
-  padding-top: 20px;
-  width: 1000px;
-  margin: auto;
 }
 .suggestion-content-detail-wrapper {
   text-align: center;
