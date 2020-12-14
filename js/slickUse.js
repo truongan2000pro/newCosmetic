@@ -4,7 +4,7 @@ $(document).ready(function () {
     slidesToScroll: 1,
     dots: false,
     centerMode: true,
-    focusOnSelect: true,
+    // focusOnSelect: true,
     // prevArrow: true,
     // nextArrow: true,
     // arrows: true,

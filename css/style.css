@@ -1,3 +1,22 @@
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.line-decor {
+  border-bottom: 1px solid lightgray;
+  padding-top: 80px;
+  width: 80%;
+  margin: auto;
+}
+
 /* animation */
 .content-wrapper {
   animation: transistionIn 2s;
@@ -37,6 +56,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: white;
 }
 a {
   color: inherit;
@@ -109,6 +129,34 @@ body {
   /* overflow: scroll; */
 }
 /* nav-bar */
+.logo-image {
+  float: left;
+  width: 120px;
+  height: 100px;
+  border-radius: 50%;
+  /* margin-left: 80px;  */
+  /* overflow: hidden; */
+  /* margin-top: -6px; */
+}
+.img-fluid {
+  width: 120px;
+  height: 100px;
+}
+ol {
+  list-style-type: none;
+  /* float: left; */
+  margin: 5px;
+  /* margin-top: 20px; */
+}
+li {
+  float: left;
+  margin: 20px;
+  font-size: 21px;
+}
+.navbar-brand {
+  width: 120px;
+  height: 100px;
+}
 .nav-bar-wrapper {
   width: 100%;
   background-color: #f1f1f1;
@@ -116,13 +164,36 @@ body {
   z-index: 1000;
 }
 .nav-bar-container {
-  width: 600px;
-  height: 80px;
+  width: 1300px;
+  height: 100px;
   margin: auto;
+  display: flex;
 }
 .nav-bar-container > ol > li > a:hover {
   color: #796a6a;
   cursor: pointer;
+}
+
+.nav-button-container {
+  float: right;
+}
+
+.ol-li-container {
+  width: 610px;
+  /* display: flex; */
+  margin: auto;
+  height: 100%;
+}
+.ol-li-container > ol {
+  /* padding: 0px !important; */
+  /* width: 1000px; */
+  /* justify-content: center;
+  align-self: center; */
+  /* margin-bottom: 0px !important; */
+  /* line-height: 1.2; */
+}
+.li-content-container > li {
+  /* padding-top: 20px; */
 }
 
 /* landingpage */
@@ -201,10 +272,10 @@ body {
 /* nav-content */
 .logo-image {
   float: left;
-  width: 46px;
-  height: 46px;
+  width: 120px;
+  height: 100px;
   border-radius: 50%;
-  margin-left: 80px;
+  /* margin-left: 80px; */
   /* overflow: hidden; */
   /* margin-top: -6px; */
 }
