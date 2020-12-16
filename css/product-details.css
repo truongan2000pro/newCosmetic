@@ -308,7 +308,9 @@ li {
   width: 980px;
   margin: auto;
 }
-.suggestion-li-content {
+.suggestion-product-detail {
+  display: block;
+  background-color: hsl(0, 0%, 95%);
 }
 .suggestion-content {
   padding-top: 20px;
