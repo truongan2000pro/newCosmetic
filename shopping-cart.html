@@ -17,30 +17,47 @@
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script src="./js/slickUse.js"></script>
         <script src="./js/modal.js"></script>
+        <script src="./js/index.js"></script>
     
         <link rel="stylesheet" href="./css/for-update.css">
     </head>
 <body>
     <div class="body-wrapper">
-    <div id="myModal" class="modal">
+        <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-       <!-- Modal content -->
-<div class="modal-content">
-<div class="modal-header">
-  <span class="close">&times;</span>
-  <h2>Modal Header</h2>
-</div>
-<div class="modal-body">
-  <p>Đây sẽ là phần đăng nhập</p>
+            <!-- Modal content -->
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 class="modal-title">Log In</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="log-in-wrapper"  action="">
+                            <input placeholder="Email" class="log-in-input email" type="email">
+                        <br>
 
-</div>
-<div class="modal-footer">
-  <h3>Modal Footer</h3>
-</div>
-</div>
+                            <input placeholder="Password" class="log-in-input password" type="password" >
+                        <br>
+                        <input type="submit" class="submit-btn" name="" value="Log In">  
+                        <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
+                    </form>
 
-    </div>
+
+                    <form class="sign-up-wrapper" action="">
+                        <input placeholder="Email" class="sign-up-input email" type="email">
+                    <br>
+
+                        <input placeholder="Password" class="sign-up-input password" type="password" >
+                    <br>
+                    <input type="submit" class="submit-btn" name="" value="Sign Up">  
+                    <div class="link-log-in">Already Have An Account? Log In Here</div>
+                </form>
+                </div>
+              
+            </div>
+
+        </div>
 
     <div class="nav-bar-wrapper">
 

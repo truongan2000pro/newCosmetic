@@ -21,12 +21,15 @@ function SignInSignUpSwitch() {
   let signInLink = document.getElementsByClassName("link-log-in")[0];
   let formLogIn = document.getElementsByClassName("log-in-wrapper")[0];
   let formSignUp = document.getElementsByClassName("sign-up-wrapper")[0];
+  let modalTitle = document.getElementsByClassName("modal-title")[0];
   signUpLink.onclick = function () {
+    modalTitle.textContent = "Sign Up";
     formLogIn.style.display = "none";
     formSignUp.style.display = "block";
     formSignUp.style.animation = "fade-in 1s";
   };
   signInLink.onclick = function () {
+    modalTitle.textContent = "Log In";
     formLogIn.style.display = "block";
     formSignUp.style.display = "none";
     formLogIn.style.animation = "fade-in 1s";
