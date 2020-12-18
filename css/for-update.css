@@ -6,7 +6,27 @@
     opacity: 1;
   }
 }
-
+#myBtn {
+  width: 40px;
+  height: 32px;
+  margin: auto 0px auto;
+}
+#myBtn > i {
+  font-size: 37px;
+}
+#myBtn:hover {
+  cursor: pointer;
+}
+.myCart {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(../images/icon-cart-round.png);
+  margin: auto 10px auto 10px;
+}
+.myCart:hover {
+  cursor: pointer;
+}
 .modal {
   padding-top: 10%;
   display: none; /* Hidden by default */
