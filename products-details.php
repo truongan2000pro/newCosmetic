@@ -1,3 +1,33 @@
+<?php
+$serverName = "localhost";
+$userName = "root";
+$password = "";
+$dbname = "cosmetic";
+
+// connect to db
+
+$con = mysqli_connect($serverName, $userName, $password, $dbname);
+
+if (mysqli_connect_errno()) {
+    echo "failed to connect";
+}
+$productId = $_GET['id'];
+$query = "select * from products where id = $productId ";
+$res = mysqli_query($con, $query);
+$arrData = mysqli_fetch_all($res);
+// echo "<pre>";
+// var_dump($arrData);
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +72,7 @@
 
                             <input placeholder="Password" class="log-in-input password" type="password" >
                         <br>
-                        <input type="submit" class="submit-btn" name="" value="Log In">  
+                        <input type="submit" class="submit-btn" name="" value="Log In">
                         <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
                     </form>
 
@@ -53,11 +83,11 @@
 
                         <input placeholder="Password" class="sign-up-input password" type="password" >
                     <br>
-                    <input type="submit" class="submit-btn" name="" value="Sign Up">  
+                    <input type="submit" class="submit-btn" name="" value="Sign Up">
                     <div class="link-log-in">Already Have An Account? Log In Here</div>
                 </form>
                 </div>
-              
+
             </div>
 
         </div>
@@ -74,7 +104,7 @@
 
 
                     <ol class="li-content-container">
-                        <li><a id="to-content" href="#content-wrapper">Shop</a></li>
+                        <li><a id="to-content" href="./index.php">Shop</a></li>
                         <li><a>Products</a></li>
                         <li><a href="#footer-wrapper">About</a></li>
                         <li><a href="#footer-wrapper">FAQ</a></li>
@@ -98,22 +128,20 @@
             <div class="product">
                 <div class="product-imgs-wrapper">
 
-                    <img class="main-img" src="./images/bee.jpg" alt="">
+                    <img class="main-img" src="<?php echo $arrData[5] ?>" alt="">
                     <ol class="flex-imgs">
-                        <li class="alt-img"><img src="./images/bee.jpg" alt=""></li>
-                        <li class="alt-img"><img src="./images/colorful.jpg" alt=""></li>
-                        <li class="alt-img"><img src="./images/bee.jpg" alt=""></li>
-                        <li class="alt-img"><img src="./images/colorful.jpg" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[5] ?>" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[6] ?>" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[7] ?>" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[8] ?>jpg" alt=""></li>
 
                     </ol>
 
                 </div>
                 <div class="description-wrapper">
-                    <div class="description-title">Tote Bag</div>
-                    <div class="description-price">Price: 200.000 VND</div>
-                    <div class="description-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores sunt
-                        eaque perspiciatis enim quis esse ducimus, minus fugiat quas veritatis placeat assumenda
-                        praesentium? Architecto deleniti aliquid ipsum fuga corporis dolorem!</div>
+                    <div class="description-title"><?php echo $arrData[0][1] ?></div>
+                    <div class="description-price">Price: <?php echo $arrData[0][4] ?> VND</div>
+                    <div class="description-text"><?php echo $arrData[0][3] ?></div>
                     <div class="description-buy-container">
                         <div class="buy-now">SHOP NOW</div>
                         <i class="fas fa-shopping-bag"></i>

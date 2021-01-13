@@ -71,7 +71,7 @@
 
 
                 <ol class="li-content-container">
-                    <li><a id="to-content" href="#content-wrapper">Shop</a></li>
+                    <li><a id="to-content" href="./index.php">Shop</a></li>
                     <li><a>Products</a></li>
                     <li><a href="#footer-wrapper">About</a></li>
                     <li><a href="#footer-wrapper">FAQ</a></li>

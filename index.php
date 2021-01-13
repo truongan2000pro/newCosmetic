@@ -1,3 +1,24 @@
+<?php
+$serverName = "localhost";
+$userName = "root";
+$password = "";
+$dbname = "cosmetic";
+
+// connect to db
+
+$con = mysqli_connect($serverName, $userName, $password, $dbname);
+
+if (mysqli_connect_errno()) {
+    echo "failed to connect";
+}
+$query = "select * from products";
+$res = mysqli_query($con, $query);
+$arrData = mysqli_fetch_all($res);
+// echo "<pre>";
+// var_dump($arrData);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +62,7 @@
 
                             <input placeholder="Password" class="log-in-input password" type="password" >
                         <br>
-                        <input type="submit" class="submit-btn" name="" value="Log In">  
+                        <input type="submit" class="submit-btn" name="" value="Log In">
                         <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
                     </form>
 
@@ -52,11 +73,11 @@
 
                         <input placeholder="Password" class="sign-up-input password" type="password" >
                     <br>
-                    <input type="submit" class="submit-btn" name="" value="Sign Up">  
+                    <input type="submit" class="submit-btn" name="" value="Sign Up">
                     <div class="link-log-in">Already Have An Account? Log In Here</div>
                 </form>
                 </div>
-              
+
             </div>
 
         </div>
@@ -82,8 +103,8 @@
 
                 </div>
                 <div id="myBtn"><i class="fas fa-user-circle"></i></div>
-                <a class="myCart" href="./shopping-cart.html"></a>
-               
+                <a class="myCart" href="./shopping-cart.php"></a>
+
                 <!-- <div class="nav-button-container">
                     <button id="Modal-btn-trigger">Open Modal</button>
 
@@ -104,92 +125,24 @@
 
         <div id="content-wrapper" class="content-wrapper section">
             <ol class="ol-content">
-
+                <?php foreach ($arrData as $key => $value) {?>
                 <li class="li-content-details">
                     <div class="content-details">
                         <div class="product-image">
-                            <img src="./images/totebag.jpg" class="content-img">
+                            <img src="<?php echo $value[5] ?>" class="content-img">
                             <div class="add-to-cart">
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.html">
-                            <div class="product-name">I'm a product</div>
+                        <a class="product-details" href="./products-details.php?id=<?php echo $value[0] ?>">
+                            <div class="product-name"><?php echo $value[1] ?></div>
                             <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
+                            <div class="product-price"><?php echo $value[4] ?></div>
                         </a>
                 </li>
+                <?php }
+;?>
 
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/tote-bags-ecom1_edited.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.html">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-                        </a>
-                </li>
-
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/tote-bags-ecom1_edited.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.html">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-
-                        </a>
-                </li>
-
-
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/tote-bags-ecom1_edited.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.html">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-                        </a>
-                </li>
-
-
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/tote-bags-ecom1_edited.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.html">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-
-                        </a>
-                </li>
 
             </ol>
 
@@ -204,7 +157,7 @@
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.html">
+                        <a class="product-details" href="./products-details.php">
                             <div class="product-name">I'm a product</div>
                             <div class="product-bot-border"></div>
                             <div class="product-price">200.000</div>
@@ -220,7 +173,7 @@
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.html">
+                        <a class="product-details" href="./products-details.php">
                             <div class="product-name">I'm a product</div>
                             <div class="product-bot-border"></div>
                             <div class="product-price">200.000</div>
@@ -237,7 +190,7 @@
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.html">
+                        <a class="product-details" href="./products-details.php">
                             <div class="product-name">I'm a product</div>
                             <div class="product-bot-border"></div>
                             <div class="product-price">200.000</div>
@@ -256,7 +209,7 @@
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.html">
+                        <a class="product-details" href="./products-details.php">
                             <div class="product-name">I'm a product</div>
                             <div class="product-bot-border"></div>
                             <div class="product-price">200.000</div>
@@ -274,7 +227,7 @@
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.html">
+                        <a class="product-details" href="./products-details.php">
                             <div class="product-name">I'm a product</div>
                             <div class="product-bot-border"></div>
                             <div class="product-price">200.000</div>
