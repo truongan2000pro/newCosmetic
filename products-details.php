@@ -15,8 +15,14 @@ $productId = $_GET['id'];
 $query = "select * from products where id = $productId ";
 $res = mysqli_query($con, $query);
 $arrData = mysqli_fetch_all($res);
+
+$suggestQuery = "select * from products where brand like 'tote' order by id desc limit 4";
+$suggestRes = mysqli_query($con, $suggestQuery);
+$suggestData = mysqli_fetch_all($suggestRes);
+
 // echo "<pre>";
-// var_dump($arrData);
+// var_dump($suggestData);
+;
 
 ?>
 
@@ -72,7 +78,7 @@ $arrData = mysqli_fetch_all($res);
 
                             <input placeholder="Password" class="log-in-input password" type="password" >
                         <br>
-                        <input type="submit" class="submit-btn" name="" value="Log In">
+                        <input type="submit" class="submit-btn log-in-btn" name="" value="Log In">
                         <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
                     </form>
 
@@ -83,7 +89,7 @@ $arrData = mysqli_fetch_all($res);
 
                         <input placeholder="Password" class="sign-up-input password" type="password" >
                     <br>
-                    <input type="submit" class="submit-btn" name="" value="Sign Up">
+                    <input type="submit" class="submit-btn sign-up-btn" name="" value="Sign Up">
                     <div class="link-log-in">Already Have An Account? Log In Here</div>
                 </form>
                 </div>
@@ -128,12 +134,12 @@ $arrData = mysqli_fetch_all($res);
             <div class="product">
                 <div class="product-imgs-wrapper">
 
-                    <img class="main-img" src="<?php echo $arrData[5] ?>" alt="">
+                    <img class="main-img" src="<?php echo $arrData[0][5] ?>" alt="">
                     <ol class="flex-imgs">
-                        <li class="alt-img"><img src="<?php echo $arrData[5] ?>" alt=""></li>
-                        <li class="alt-img"><img src="<?php echo $arrData[6] ?>" alt=""></li>
-                        <li class="alt-img"><img src="<?php echo $arrData[7] ?>" alt=""></li>
-                        <li class="alt-img"><img src="<?php echo $arrData[8] ?>jpg" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[0][5] ?>" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[0][7] ?>" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[0][6] ?>" alt=""></li>
+                        <li class="alt-img"><img src="<?php echo $arrData[0][8] ?>jpg" alt=""></li>
 
                     </ol>
 
@@ -143,7 +149,7 @@ $arrData = mysqli_fetch_all($res);
                     <div class="description-price">Price: <?php echo $arrData[0][4] ?> VND</div>
                     <div class="description-text"><?php echo $arrData[0][3] ?></div>
                     <div class="description-buy-container">
-                        <div class="buy-now">SHOP NOW</div>
+                        <a href="./shopping-cart.php?id=<?php echo $arrData[0][0] ?>" class="buy-now">SHOP NOW</a>
                         <i class="fas fa-shopping-bag"></i>
                     </div>
                 </div>
@@ -156,48 +162,19 @@ $arrData = mysqli_fetch_all($res);
                 </div>
                 <div class="suggestion-content">
                     <ol class="suggestion-ol-content">
+                    <?php foreach ($suggestData as $key => $value) {?>
                         <li class="suggestion-li-content">
                             <div class="suggestion-content-detail-wrapper">
-                                <img src="./images/bee.jpg" class="content-img">
-                                <a class="suggestion-product-detail">
-                                    <div class="product-name">I'm a product</div>
-                                    <div class="product-bot-border"></div>
-                                    <div class="product-price">200.000</div>
+                                <img src="<?php echo $value[5] ?>" class="content-img">
+                                <a class="suggestion-product-detail" href="./products-details.php?id=<?php echo $value[0] ?>" >
+                                    <div class="product-name"><?php echo $value[1] ?></div>
+                                    <div class="product-bot-border">----</div>
+                                    <div class="product-price"><?php echo $value[4] ?> VND</div>
                                 </a>
                             </div>
 
                         </li>
-                        <li class="suggestion-li-content">
-                            <div class="suggestion-content-detail-wrapper">
-                                <img src="./images/colorful.jpg" class="content-img">
-                                <a class="suggestion-product-detail">
-                                    <div class="product-name">I'm a product</div>
-                                    <div class="product-bot-border"></div>
-                                    <div class="product-price">200.000</div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="suggestion-li-content">
-                            <div class="suggestion-content-detail-wrapper">
-                                <img src="./images/tote-bags-ecom1_edited.jpg" class="content-img">
-                                <a class="suggestion-product-detail">
-                                    <div class="product-name">I'm a product</div>
-                                    <div class="product-bot-border"></div>
-                                    <div class="product-price">200.000</div>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="suggestion-li-content">
-                            <div class="suggestion-content-detail-wrapper">
-                                <img src="./images/bee.jpg" class="content-img">
-                                <a class="suggestion-product-detail">
-                                    <div class="product-name">I'm a product</div>
-                                    <div class="product-bot-border"></div>
-                                    <div class="product-price">200.000</div>
-                                </a>
-                            </div>
-                        </li>
+                    <?php }?>
 
 
                     </ol>

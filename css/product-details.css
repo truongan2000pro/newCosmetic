@@ -278,6 +278,7 @@ li {
   /* line-height: 2; */
 }
 .buy-now {
+  display: block;
   line-height: 2.2;
 }
 .description-buy-container > i {

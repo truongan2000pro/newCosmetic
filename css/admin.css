@@ -3,3 +3,19 @@
   text-align: center;
   padding: none !important;
 }
+.name {
+  /* min-width: 140px; */
+}
+.des {
+  /* min-width: 300px; */
+}
+.container {
+  margin: 0px !important;
+  /* margin-right: auto !important; */
+  /* margin-left: auto !important; */
+}
+.row-container {
+  min-width: 1500px;
+  width: 100%;
+  margin: auto;
+}

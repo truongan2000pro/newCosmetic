@@ -23,7 +23,12 @@ $resCheck = mysqli_num_rows($res);
 // }
 $row = mysqli_fetch_all($res);
 echo ("<pre>");
-var_dump($row);
+
+$sql = "select * from users where email ='admin@admin' and password ='admin' ";
+$result = mysqli_query($con, $sql);
+$a = mysqli_fetch_all($result);
+var_dump($a);
+// var_dump($row);
 // while ($row = mysqli_fetch_array($res)) {
 //     $a = $row["name"];
 // } {

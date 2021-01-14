@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
         <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
         <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -18,7 +24,7 @@
         <script src="./js/slickUse.js"></script>
         <script src="./js/modal.js"></script>
         <script src="./js/index.js"></script>
-    
+
         <link rel="stylesheet" href="./css/for-update.css">
     </head>
 <body>
@@ -39,7 +45,7 @@
 
                             <input placeholder="Password" class="log-in-input password" type="password" >
                         <br>
-                        <input type="submit" class="submit-btn" name="" value="Log In">  
+                        <input type="submit" class="submit-btn log-in-btn" name="" value="Log In">
                         <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
                     </form>
 
@@ -50,11 +56,11 @@
 
                         <input placeholder="Password" class="sign-up-input password" type="password" >
                     <br>
-                    <input type="submit" class="submit-btn" name="" value="Sign Up">  
+                    <input type="submit" class="submit-btn sign-up-btn" name="" value="Sign Up">
                     <div class="link-log-in">Already Have An Account? Log In Here</div>
                 </form>
                 </div>
-              
+
             </div>
 
         </div>
@@ -81,7 +87,7 @@
             </div>
             <div id="myBtn"><i class="fas fa-user-circle"></i></div>
             <a class="myCart" href="./shopping-cart.html"></a>
-            
+
             <!-- <div class="nav-button-container">
                 <button id="Modal-btn-trigger">Open Modal</button>
 
@@ -95,21 +101,21 @@
     <div class="cart-items-wrapper">
         <!-- <div class="cart-items-left-wrapper"> -->
             <div class="cart-items-left">
-               
+
                 <a class="cart-img-wrapper" href="#">
                     <img class="cart-img" src="./images/colorful.jpg" alt="">
-                 </a> 
+                 </a>
                  <div class="cart-item-detail">
                     <a href="#" class="cart-item-name">ITEM NAME A</a>
                     <div class="cart-item-price">200.000 VND</div>
                 </div>
-                
-    
+
+
             </div>
 
-           
 
-            <div class="cart-items-right">                
+
+            <div class="cart-items-right">
                 <div class="cart-item-delete">X</div>
             </div>
 
@@ -117,19 +123,19 @@
     <div class="cart-items-wrapper">
         <!-- <div class="cart-items-left-wrapper"> -->
             <div class="cart-items-left">
-               
+
                 <a class="cart-img-wrapper" href="#">
                     <img class="cart-img" src="./images/colorful.jpg" alt="">
-                 </a> 
+                 </a>
                  <div class="cart-item-detail">
                     <a href="#" class="cart-item-name">ITEM NAME A</a>
                     <div class="cart-item-price">200.000 VND</div>
                 </div>
-                
-    
+
+
             </div>
 
-           
+
 
             <div class="cart-items-right">
                 <div class="cart-item-delete">X</div>

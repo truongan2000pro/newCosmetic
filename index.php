@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_SESSION["username"])) {
+    echo "ok";
+}
 $serverName = "localhost";
 $userName = "root";
 $password = "";
@@ -27,6 +31,7 @@ $arrData = mysqli_fetch_all($res);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmetic</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -40,6 +45,7 @@ $arrData = mysqli_fetch_all($res);
     <script src="./js/slickUse.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/user.js"></script>
 
 </head>
 
@@ -56,26 +62,26 @@ $arrData = mysqli_fetch_all($res);
                     <h2 class="modal-title">Log In</h2>
                 </div>
                 <div class="modal-body">
-                    <form class="log-in-wrapper"  action="">
-                            <input placeholder="Email" class="log-in-input email" type="email">
-                        <br>
+                    <form method="" class="log-in-wrapper"  action="">
+                                <input placeholder="Email" class="log-in-input email" type="email">
+                            <br>
 
-                            <input placeholder="Password" class="log-in-input password" type="password" >
-                        <br>
-                        <input type="submit" class="submit-btn" name="" value="Log In">
-                        <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
+                                <input placeholder="Password" class="log-in-input password" type="password" >
+                            <br>
+                            <input type="button" class="submit-btn log-in-btn" name=""  value="Log In">
+                            <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
                     </form>
 
 
                     <form class="sign-up-wrapper" action="">
-                        <input placeholder="Email" class="sign-up-input email" type="email">
-                    <br>
+                            <input placeholder="Email" class="sign-up-input email" type="email">
+                        <br>
 
-                        <input placeholder="Password" class="sign-up-input password" type="password" >
-                    <br>
-                    <input type="submit" class="submit-btn" name="" value="Sign Up">
-                    <div class="link-log-in">Already Have An Account? Log In Here</div>
-                </form>
+                            <input placeholder="Password" class="sign-up-input password" type="password" >
+                        <br>
+                        <input type="submit" class="submit-btn sign-up-btn" name="" value="Sign Up">
+                        <div class="link-log-in">Already Have An Account? Log In Here</div>
+                    </form>
                 </div>
 
             </div>
