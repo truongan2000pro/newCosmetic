@@ -168,3 +168,44 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.btn-sign-out {
+  display: block;
+  border-radius: 2px;
+  font-size: 18px;
+  margin-top: 30px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  height: 40px;
+  outline: none;
+  border: none;
+  line-height: 2.5;
+  background-color: red !important;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.btn-sign-out:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(1.01);
+}
+.error {
+  display: none;
+  font-size: 17px;
+  margin-top: 25px;
+  font-weight: 600;
+  text-align: center;
+  color: red !important;
+}
+.success {
+  display: none;
+  font-size: 17px;
+  margin-top: 25px;
+  font-weight: 600;
+  text-align: center;
+  color: lightgreen !important;
+}

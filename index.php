@@ -1,14 +1,14 @@
 <?php
 session_start();
 if (isset($_SESSION["email"])) {
-    echo "ok";
+    // echo "ok";
 
 }
 $serverName = "localhost";
 $userName = "root";
 $password = "";
 $dbname = "cosmetic";
-
+// die();
 // connect to db
 
 $con = mysqli_connect($serverName, $userName, $password, $dbname);
@@ -23,6 +23,7 @@ $arrData = mysqli_fetch_all($res);
 // var_dump($arrData);
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +45,9 @@ $arrData = mysqli_fetch_all($res);
     <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="./js/slickUse.js"></script>
+    <!-- <script src="./js/user.js"></script> -->
     <script src="./js/index.js"></script>
     <script src="./js/modal.js"></script>
-    <script src="./js/user.js"></script>
 
 </head>
 
@@ -63,24 +64,26 @@ $arrData = mysqli_fetch_all($res);
                     <h2 class="modal-title">Log In</h2>
                 </div>
                 <div class="modal-body">
-                    <form method="" class="log-in-wrapper"  action="">
-                                <input placeholder="Email" class="log-in-input email" type="email">
+                    <form class="log-in-wrapper"  action="">
+                                <input placeholder="Email" class="log-in-input log-in-mail email" type="email">
                             <br>
 
-                                <input placeholder="Password" class="log-in-input password" type="password" >
+                                <input placeholder="Password" class="log-in-input log-in-pass password" type="password" >
                             <br>
                             <input type="button" class="submit-btn log-in-btn" name=""  value="Log In">
+                            <div class="error">Wrong email or password</div>
                             <div class="link-sign-up">Don't Have Account? Sign Up Here</div>
                     </form>
 
 
                     <form class="sign-up-wrapper" action="">
-                            <input placeholder="Email" class="sign-up-input email" type="email">
+                            <input placeholder="Email" class="sign-up-input sign-up-mail email" type="email">
                         <br>
 
-                            <input placeholder="Password" class="sign-up-input password" type="password" >
+                            <input placeholder="Password" class="sign-up-input sign-up-pass password" type="password" >
                         <br>
-                        <input type="submit" class="submit-btn sign-up-btn" name="" value="Sign Up">
+                        <input type="button" class="submit-btn sign-up-btn" name="" value="Sign Up">
+                        <div class="success">Thank you for sign up, plase log in now.</div>
                         <div class="link-log-in">Already Have An Account? Log In Here</div>
                     </form>
                 </div>
@@ -149,8 +152,6 @@ $arrData = mysqli_fetch_all($res);
                 </li>
                 <?php }
 ;?>
-
-
             </ol>
 
             <div class="line-decor"></div>
@@ -295,5 +296,24 @@ $arrData = mysqli_fetch_all($res);
 
 
 </body>
+
+<script>
+    <?php if ($_SESSION == null) {?>
+        let email="";
+
+        <?php } else {?>
+        let email= <?php echo json_encode($_SESSION["email"]) ?>;
+
+    <?php }?>
+    if(email.length>0){
+     let formLogIn = document.getElementsByClassName("log-in-wrapper")[0];
+     let modalTitle = document.getElementsByClassName("modal-title")[0];
+     let modalBody = document.getElementsByClassName("modal-body")[0];
+     modalTitle.textContent= "Hello" +"     "+ email;
+     formLogIn.style.display = "none";
+     modalBody.innerHTML=`<a class="btn-sign-out" href="./sign-out.php">Sign Out</a>`
+
+    }
+</script>
 
 </html>
