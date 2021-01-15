@@ -274,7 +274,7 @@ li {
 .description-buy-container > * {
   text-align: center;
   font-size: 25px;
-  color: white;
+  color: white !important ;
   /* line-height: 2; */
 }
 .buy-now {

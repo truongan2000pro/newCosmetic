@@ -156,7 +156,8 @@ $suggestData = mysqli_fetch_all($suggestRes);
                     <div class="description-price">Price: <?php echo $arrData[0][4] ?> VND</div>
                     <div class="description-text"><?php echo $arrData[0][3] ?></div>
                     <div class="description-buy-container">
-                        <a href="./shopping-cart.php?id=<?php echo $arrData[0][0] ?>" class="buy-now">SHOP NOW</a>
+                        <a href="./add-to-cart.php?id=<?php echo $arrData[0][0] ?>&name=<?php echo $arrData[0][1] ?>&img=<?php echo $arrData[0][5] ?>&price=<?php echo $arrData[0][4] ?>" class="buy-now">
+                        SHOP NOW</a>
                         <i class="fas fa-shopping-bag"></i>
                     </div>
                 </div>

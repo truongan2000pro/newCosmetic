@@ -1,9 +1,35 @@
 <?php
 session_start();
+
+$serverName = "localhost";
+$userName = "root";
+$password = "";
+$dbname = "cosmetic";
+
+// connect to db
+
+$con = mysqli_connect($serverName, $userName, $password, $dbname);
+
+if (mysqli_connect_errno()) {
+    echo "failed to connect";
+}
 if (isset($_SESSION["email"])) {
     // echo "ok";
 
-}?>
+    $userId = $_SESSION["email"];
+    $sql = "select * from `carts` where `id_user` = '$userId'";
+    $res = mysqli_query($con, $sql);
+    $arrData = mysqli_fetch_all($res);
+}
+// $idProduct = $arrData[0][0];
+// $getProduct = "select * from `products` where `id`=$idProduct ";
+// $productRes = mysqli_query($con, $getProduct);
+// $arrProduct = mysqli_fetch_all($productRes);
+// echo "<pre>";
+// var_dump($arrData);
+// die();
+
+?>
 
 
 
@@ -97,7 +123,7 @@ if (isset($_SESSION["email"])) {
 
             </div>
             <div id="myBtn"><i class="fas fa-user-circle"></i></div>
-            <a class="myCart" href="./shopping-cart.html"></a>
+            <a class="myCart" href="./shopping-cart.php"></a>
 
             <!-- <div class="nav-button-container">
                 <button id="Modal-btn-trigger">Open Modal</button>
@@ -109,16 +135,19 @@ if (isset($_SESSION["email"])) {
 
     <div class="cart-decor">SHOPPING CART</div>
     <div class="line-decor"></div>
+    <?php if (isset($_SESSION["email"])) {
+    foreach ($arrData as $key => $value) {
+        ?>
     <div class="cart-items-wrapper">
         <!-- <div class="cart-items-left-wrapper"> -->
             <div class="cart-items-left">
 
                 <a class="cart-img-wrapper" href="#">
-                    <img class="cart-img" src="./images/colorful.jpg" alt="">
+                    <img class="cart-img" src="<?php echo $value[3] ?>" alt="">
                  </a>
                  <div class="cart-item-detail">
-                    <a href="#" class="cart-item-name">ITEM NAME A</a>
-                    <div class="cart-item-price">200.000 VND</div>
+                    <a href="#" class="cart-item-name"><?php echo $value[2] ?></a>
+                    <div class="cart-item-price"><?php echo $value[4] ?> VND</div>
                 </div>
 
 
@@ -131,28 +160,8 @@ if (isset($_SESSION["email"])) {
             </div>
 
     </div>
-    <div class="cart-items-wrapper">
-        <!-- <div class="cart-items-left-wrapper"> -->
-            <div class="cart-items-left">
+    <?php }}?>
 
-                <a class="cart-img-wrapper" href="#">
-                    <img class="cart-img" src="./images/colorful.jpg" alt="">
-                 </a>
-                 <div class="cart-item-detail">
-                    <a href="#" class="cart-item-name">ITEM NAME A</a>
-                    <div class="cart-item-price">200.000 VND</div>
-                </div>
-
-
-            </div>
-
-
-
-            <div class="cart-items-right">
-                <div class="cart-item-delete">X</div>
-            </div>
-
-    </div>
 
     <div class="footer-wrapper" id="footer-wrapper">
         <div class="footer-container">
