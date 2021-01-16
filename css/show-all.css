@@ -1,0 +1,14 @@
+body {
+  background-color: white !important;
+}
+.show-all-products {
+  padding-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1300px;
+  margin: auto;
+}
+.show-all-products > * {
+  /* display: inline-block; */
+  /* border: 1px solid grey; */
+}

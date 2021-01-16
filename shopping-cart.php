@@ -142,11 +142,11 @@ if (isset($_SESSION["email"])) {
         <!-- <div class="cart-items-left-wrapper"> -->
             <div class="cart-items-left">
 
-                <a class="cart-img-wrapper" href="#">
+                <a class="cart-img-wrapper" href="./products-details.php?id=<?php echo $value[0] ?>">
                     <img class="cart-img" src="<?php echo $value[3] ?>" alt="">
                  </a>
                  <div class="cart-item-detail">
-                    <a href="#" class="cart-item-name"><?php echo $value[2] ?></a>
+                    <a href="./products-details.php?id=<?php echo $value[0] ?>" class="cart-item-name"><?php echo $value[2] ?></a>
                     <div class="cart-item-price"><?php echo $value[4] ?> VND</div>
                 </div>
 

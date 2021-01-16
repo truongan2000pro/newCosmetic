@@ -16,9 +16,14 @@ $con = mysqli_connect($serverName, $userName, $password, $dbname);
 if (mysqli_connect_errno()) {
     echo "failed to connect";
 }
-$query = "select * from products";
-$res = mysqli_query($con, $query);
-$arrData = mysqli_fetch_all($res);
+$query = "select * from products where brand = 'tote' order by id desc  limit 5 ";
+$bagsRes = mysqli_query($con, $query);
+$bagsArrData = mysqli_fetch_all($bagsRes);
+
+$sql = "select * from products where brand = 'lips' order by id desc  limit 5 ";
+$lipsRes = mysqli_query($con, $sql);
+$lipsArrData = mysqli_fetch_all($lipsRes);
+
 // echo "<pre>";
 // var_dump($arrData);
 
@@ -132,10 +137,10 @@ $arrData = mysqli_fetch_all($res);
 
         <div class="line-decor"></div>
 
-
         <div id="content-wrapper" class="content-wrapper section">
+            <div class="section-img-wrapper"><img class="section-img" src="./images/shopping-bag.png" alt=""> NEWEST BAGS </div>
             <ol class="ol-content">
-                <?php foreach ($arrData as $key => $value) {?>
+                <?php foreach ($bagsArrData as $key => $value) {?>
                 <li class="li-content-details">
                     <div class="content-details">
                         <div class="product-image">
@@ -150,100 +155,33 @@ $arrData = mysqli_fetch_all($res);
                             <div class="product-price"><?php echo $value[4] ?></div>
                         </a>
                 </li>
-                <?php }
-;?>
+                <?php }?>;
             </ol>
+            <a href="./show-all.php?brand=tote" class="show-all" >See More <i class="fas fa-caret-down"></i> </a>
 
-            <div class="line-decor"></div>
+        <div class="line-decor"></div>
+            <div class="section-img-wrapper"><img class="section-img" src="./images/lipstick.png" alt=""> NEWEST LIPSTICKS </div>
             <ol class="ol-content">
 
+            <?php foreach ($lipsArrData as $key => $value) {?>
                 <li class="li-content-details">
                     <div class="content-details">
                         <div class="product-image">
-                            <img src="./images/kem-chong-nang-skin-aqua-skin-aquatone-up-uv-50g-80g-170g.jpg" class="content-img">
+                            <img src="<?php echo $value[5] ?>" class="content-img">
                             <div class="add-to-cart">
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.php">
-                            <div class="product-name">I'm a product</div>
+                        <a class="product-details" href="./products-details.php?id=<?php echo $value[0] ?>">
+                            <div class="product-name"><?php echo $value[1] ?></div>
                             <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
+                            <div class="product-price"><?php echo $value[4] ?></div>
                         </a>
                 </li>
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/kem-duong-nang-tong-peach-whipping-tone-up-cream_1.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.php">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-                        </a>
-                </li>
-
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/nuoc-hoa-hong-sk-ii.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.php">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-
-                        </a>
-                </li>
-
-
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/son-thoi-samu-01-2.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.php">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-                        </a>
-                </li>
-
-
-
-
-                <li class="li-content-details">
-                    <div class="content-details">
-                        <div class="product-image">
-                            <img src="./images/tote-bags-ecom1_edited.jpg" class="content-img">
-                            <div class="add-to-cart">
-                                <div class="add-btn">ADD TO CART</div>
-                            </div>
-                        </div>
-                        <a class="product-details" href="./products-details.php">
-                            <div class="product-name">I'm a product</div>
-                            <div class="product-bot-border"></div>
-                            <div class="product-price">200.000</div>
-
-                        </a>
-                </li>
+                <?php }?>;
 
             </ol>
+            <a href="./show-all.php?brand=lips" class="show-all" >See More <i class="fas fa-caret-down"></i> </a>
 
 
 

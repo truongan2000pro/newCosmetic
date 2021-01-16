@@ -13,4 +13,4 @@ if (mysqli_connect_errno()) {
 $productId = $_GET['id'];
 $query = "delete from products where id = $productId";
 mysqli_query($con, $query);
-header("Location: http://localhost:6969/cosmetic/admin.php");
+header("location: http://localhost:6969/cosmetic/admin.php");

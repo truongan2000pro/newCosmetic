@@ -143,6 +143,16 @@ body {
   width: 120px;
   height: 100px;
 }
+.section-img-wrapper {
+  font-size: 29px;
+  /* width: 1500px; */
+  height: 55px;
+  margin: 40px 0px 40px auto;
+}
+.section-img {
+  width: 50px;
+  height: 50px;
+}
 ol {
   list-style-type: none;
   /* float: left; */
@@ -153,6 +163,23 @@ li {
   float: left;
   margin: 20px;
   font-size: 21px;
+}
+.show-all {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.show-all > i {
+  margin-left: 5px;
+  line-height: 1.4;
+}
+.show-all > * {
+  font-size: 20px;
+}
+.show-all:hover {
+  cursor: pointer;
+  color: #ffc83c;
 }
 .navbar-brand {
   width: 120px;
@@ -300,7 +327,6 @@ li {
 } */
 .content-wrapper {
   overflow: auto;
-  padding-top: 120px;
   width: 1400px;
 
   /* bottom: 200px; */
