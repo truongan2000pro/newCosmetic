@@ -21,7 +21,8 @@ $query = "select * from products where id = $productId ";
 $res = mysqli_query($con, $query);
 $arrData = mysqli_fetch_all($res);
 
-$suggestQuery = "select * from products where brand like 'tote' order by id desc limit 4";
+$brand = $_GET['brand'];
+$suggestQuery = "select * from products where brand = '$brand' order by id desc limit 4";
 $suggestRes = mysqli_query($con, $suggestQuery);
 $suggestData = mysqli_fetch_all($suggestRes);
 

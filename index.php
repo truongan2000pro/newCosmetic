@@ -149,7 +149,7 @@ $lipsArrData = mysqli_fetch_all($lipsRes);
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.php?id=<?php echo $value[0] ?>">
+                        <a class="product-details" href="./products-details.php?id=<?php echo $value[0] ?>&brand=<?php echo $value[2] ?>">
                             <div class="product-name"><?php echo $value[1] ?></div>
                             <div class="product-bot-border"></div>
                             <div class="product-price"><?php echo $value[4] ?></div>
@@ -172,7 +172,7 @@ $lipsArrData = mysqli_fetch_all($lipsRes);
                                 <div class="add-btn">ADD TO CART</div>
                             </div>
                         </div>
-                        <a class="product-details" href="./products-details.php?id=<?php echo $value[0] ?>">
+                        <a class="product-details" href="./products-details.php?id=<?php echo $value[0] ?>&brand=<?php echo $value[2] ?>">
                             <div class="product-name"><?php echo $value[1] ?></div>
                             <div class="product-bot-border"></div>
                             <div class="product-price"><?php echo $value[4] ?></div>
