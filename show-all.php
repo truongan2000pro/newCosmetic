@@ -125,6 +125,7 @@ $arrData = mysqli_fetch_all($res);
         </div>
     </div>
     <!-- <div class="show-all-products"></div> -->
+    <div class="show-all-text-decor"> ALL PRODUCTS </div>
     <ol class="ol-content show-all-products">
         <?php foreach ($arrData as $key => $value) {?>
             <li class="li-content-details">

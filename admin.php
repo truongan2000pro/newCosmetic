@@ -11,13 +11,30 @@ $con = mysqli_connect($serverName, $userName, $password, $dbname);
 if (mysqli_connect_errno()) {
     echo "failed to connect";
 }
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+$itemPerPage = 5;
+$startFrom = ($page - 1) * $itemPerPage;
+// echo $startFrom;
+
+//this query is for couting all items and divine it by 5
 $query = "select * from products ";
 $res = mysqli_query($con, $query);
-$arrData = mysqli_fetch_all($res);
+$totalItem = mysqli_num_rows($res);
+$totalPage = ceil($totalItem / 5);
+// echo $totalPage;
+
+//query data from here
+$sql = "select * from products limit $startFrom,$itemPerPage";
+$sqlRes = mysqli_query($con, $sql);
+$arrData = mysqli_fetch_all($sqlRes);
+
+// die();
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,14 +50,15 @@ $arrData = mysqli_fetch_all($res);
 
 </head>
 <body>
+
 <section>
 	  	<div class="row-container">
 			<div class="row">
 				<div class="">
-					<table class="table table-striped">
+					<table class="table  table-striped">
 						<thead>
 							<tr>
-								<th scope="col">Id</th>
+								<th scope="col ">Id</th>
 								<th class="name" scope="col">Tên sản phẩm</th>
 								<th scope="col">Brand</th>
 								<th class="des" scope="col">Mô tả</th>
@@ -78,8 +96,17 @@ $arrData = mysqli_fetch_all($res);
 					</table>
 				</div>
 			</div>
+
 		</div>
+
+
       </section>
+	  <div class="page-number-wrapper" >
+	  <?php for ($i = 1; $i <= $totalPage; $i++) {
+    echo "<a class='btn btn-success' href='./admin.php?page=$i '>$i </a>";
+}?>
+	  </div>
+
 
 </body>
 

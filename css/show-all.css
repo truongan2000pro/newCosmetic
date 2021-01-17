@@ -12,3 +12,12 @@ body {
   /* display: inline-block; */
   /* border: 1px solid grey; */
 }
+.show-all-text-decor {
+  padding-top: 180px;
+  font-size: 30px;
+  font-weight: 600;
+  width: 15%;
+  margin: auto;
+  text-align: center;
+  border-bottom: 8px solid #ffc83c;
+}

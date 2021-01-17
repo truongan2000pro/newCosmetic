@@ -1,21 +1,30 @@
 .edit {
   list-style: none;
   text-align: center;
-  padding: none !important;
+  /* padding: auto; */
 }
-.name {
-  /* min-width: 140px; */
-}
-.des {
-  /* min-width: 300px; */
-}
-.container {
-  margin: 0px !important;
-  /* margin-right: auto !important; */
-  /* margin-left: auto !important; */
-}
-.row-container {
-  min-width: 1500px;
-  width: 100%;
+.row {
+  width: 1500px;
   margin: auto;
+}
+td {
+  max-width: 200px;
+  overflow-wrap: break-word;
+}
+th {
+  max-width: 10px;
+}
+table {
+  padding: 1000px;
+}
+.btn {
+  text-align: center;
+}
+.page-number-wrapper {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.page-number-wrapper > * {
+  margin: 20px 1px 20px 1px;
 }
