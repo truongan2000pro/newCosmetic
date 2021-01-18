@@ -246,6 +246,7 @@ li {
   background-color: red;
 }
 .cart-item-delete {
+  display: block;
   line-height: 2.2;
 }
 /* footer */

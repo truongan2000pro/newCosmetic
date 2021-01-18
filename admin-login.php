@@ -1,3 +1,8 @@
+<?php require "admin-login-handler.php"
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +13,14 @@
 </head>
 <body>
     <div class="log-in-container">
-    <form class="log-in-wrapper"  action="">
+    <form class="log-in-wrapper"  method="POST">
                             <h2>LOG IN</h2>
-                                <input placeholder="Email" class="log-in-input log-in-mail email" type="email">
+                                <input placeholder="Email" name="input-email" class="log-in-input log-in-mail email" type="email">
                             <br>
 
-                                <input placeholder="Password" class="log-in-input log-in-pass password" type="password" >
+                                <input placeholder="Password" name="input-password" class="log-in-input log-in-pass password" type="password" >
                             <br>
-                            <a type="button" class="admin-log-in-btn" >LOG IN </a>
+                            <input  type="submit" name="submit-btn" class="admin-log-in-btn" >
                     </form>
     </div>
 </body>

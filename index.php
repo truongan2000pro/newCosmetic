@@ -100,7 +100,7 @@ $lipsArrData = mysqli_fetch_all($lipsRes);
         <div class="nav-bar-wrapper">
 
             <div class="nav-bar-container">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="">
                     <div class="logo-image">
                         <img src="./images/logo-png-transparent.png" class="img-fluid">
                     </div>
@@ -155,7 +155,7 @@ $lipsArrData = mysqli_fetch_all($lipsRes);
                             <div class="product-price"><?php echo $value[4] ?></div>
                         </a>
                 </li>
-                <?php }?>;
+                <?php }?>
             </ol>
             <a href="./show-all.php?brand=tote" class="show-all" >See More <i class="fas fa-caret-down"></i> </a>
 
@@ -178,7 +178,7 @@ $lipsArrData = mysqli_fetch_all($lipsRes);
                             <div class="product-price"><?php echo $value[4] ?></div>
                         </a>
                 </li>
-                <?php }?>;
+                <?php }?>
 
             </ol>
             <a href="./show-all.php?brand=lips" class="show-all" >See More <i class="fas fa-caret-down"></i> </a>

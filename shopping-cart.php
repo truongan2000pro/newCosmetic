@@ -105,7 +105,7 @@ if (isset($_SESSION["email"])) {
     <div class="nav-bar-wrapper">
 
         <div class="nav-bar-container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="./index.php">
                 <div class="logo-image">
                     <img src="./images/logo-png-transparent.png" class="img-fluid">
                 </div>
@@ -156,7 +156,7 @@ if (isset($_SESSION["email"])) {
 
 
             <div class="cart-items-right">
-                <div class="cart-item-delete">X</div>
+                <a href="./delete-cart.php?id=<?php echo $value[0] ?>" class="cart-item-delete">X</a>
             </div>
 
     </div>

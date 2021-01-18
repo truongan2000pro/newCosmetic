@@ -27,7 +27,7 @@ if (mysqli_connect_errno()) {
 
 $sql = "insert into `carts`( `id_product`, `id_user`, `Product_name`, `Product_img`, `Product_price`)  values ('$idProduct' , '$idUser','$nameProduct','$imgProduct','$priceProduct')";
 if (mysqli_query($con, $sql) == true) {
-    header("location: http://localhost:6969/cosmetic/admin.php");
+    header("location: http://localhost:6969/cosmetic/products-details.php");
 } else {
     // echo "No";
     // echo $sql;

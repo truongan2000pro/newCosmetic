@@ -1,8 +1,15 @@
 <?php
+session_start();
 $serverName = "localhost";
 $userName = "root";
 $password = "";
 $dbname = "cosmetic";
+
+if (!isset($_SESSION["admin"])) {
+    header("Location:http://localhost:6969/cosmetic/admin-login.php");
+}
+//to force login whenever refresh page
+session_unset();
 
 // connect to db
 
@@ -85,8 +92,8 @@ $arrData = mysqli_fetch_all($sqlRes);
 									<td>
 
 										<ul>
-											<li class="edit" ><a href="./add.php?id=<?php echo $val[0] ?>"  alt="">Thêm</a></li>
-											<li class="edit" ><a href="./delete.php?id=<?php echo $val[0] ?>"alt="">Sửa</a></li>
+											<li class="edit" ><a href="./add-update.php"  alt="">Thêm</a></li>
+											<li class="edit" ><a href="./add-update.php?id=<?php echo $val[0] ?>&name=<?php echo $val[1] ?>&brand=<?php echo $val[2] ?>&desc=<?php echo $val[3] ?>&price=<?php echo $val[4] ?>&coverImg=<?php echo $val[5] ?>&altImg1=<?php echo $val[6] ?>&altImg2=<?php echo $val[7] ?>&altImg3=<?php echo $val[8] ?>"alt="">Sửa</a></li>
 											<li class="edit" ><a href="./delete.php?id=<?php echo $val[0] ?>"alt="">Xóa</a></li>
 										</ul>
 									</td>

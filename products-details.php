@@ -109,7 +109,7 @@ $suggestData = mysqli_fetch_all($suggestRes);
         <div class="nav-bar-wrapper">
 
             <div class="nav-bar-container">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="./index.php">
                     <div class="logo-image">
                         <img src="./images/logo-png-transparent.png" class="img-fluid">
                     </div>
